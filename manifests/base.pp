@@ -1,4 +1,4 @@
-include atgos::lifeinside
+require atgos::lifeinside
 
 class { 'logstash::common':
   logstash_home => '/opt/logstash',
