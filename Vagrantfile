@@ -14,7 +14,7 @@ Vagrant::Config.run do |config|
   # http://puppetlabs.s3.amazonaws.com/pub/centos56_64.box
   # http://dl.dropbox.com/u/9227672/centos-5.6-x86_64-netinstall-4.1.6.box
   # http://dl.dropbox.com/u/15307300/vagrant-0.7-centos-64-base.box
-  config.vm.box_url = "http://domain.com/path/to/above.box"
+  config.vm.box_url = "http://dl.dropbox.com/u/9227672/centos-5.6-x86_64-netinstall-4.1.6.box"
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
