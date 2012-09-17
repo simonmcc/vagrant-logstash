@@ -1,10 +1,17 @@
-include atgos::lifeinside
+# redis rpm lives here
+yumrepo { 'yum.mccartney.ie':
+  baseurl  => 'http://yum.mccartney.ie',
+  descr    => 'redis for el',
+  gpgcheck => 0,
+}
 
-class { 'logstash::common':
-  logstash_home => '/opt/logstash',
-  logstash_jar_provider => 'puppet',
-  logstash_transport => 'redis',
-  redis_provider     => 'package',
+
+class { 'logstash::config':
+  logstash_home          => '/opt/logstash',
+  logstash_jar_provider  => 'http',
+  logstash_transport     => 'redis',
+  redis_provider         => 'package',
+  elasticsearch_provider => 'embedded',
 }
 
 class { 'logstash::indexer': }
